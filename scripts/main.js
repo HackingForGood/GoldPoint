@@ -189,6 +189,11 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
     // Hide sign-in button.
     this.signInButton.setAttribute('hidden', 'true');
 
+    // TODO: page redirection, use this field, compare to harcoded user list for presention
+    if (this.auth.currentUser.email == 'mkazin@gmail.com') {
+      window.location.href = '/views/teacherView.html';
+    }
+
     // We load currently existing chant messages.
     this.loadMessages();
 
